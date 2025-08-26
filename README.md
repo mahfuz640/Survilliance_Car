@@ -1,7 +1,6 @@
-# Survilliance_Car
-# 🚀 ESP32 Robot Control System
+# 🚀 ESP32 Robot Control System with Camera
 
-This project is an **ESP32-based Robot Control System** with the following features:
+This project is an **ESP32-based Robot Control & Monitoring System** with the following features:
 
 - ✅ **Wi-Fi Access Point** – ESP32 runs as a hotspot, and hosts a control webpage.  
 - ✅ **Servo Control** – Three servo motors can be controlled (open/close, up/down, short plate).  
@@ -9,15 +8,17 @@ This project is an **ESP32-based Robot Control System** with the following featu
 - ✅ **Metal Detector Sensor** – Detects metal vs non-metal and updates in **real-time** (every 100ms).  
 - ✅ **DHT Sensor** – Temperature and humidity monitoring.  
 - ✅ **Digital Compass** – Live compass heading visualization with direction (N/E/S/W).  
-- ✅ **Colorful Web UI** – Buttons with gradient colors, non-selectable text, and smooth status updates.  
+- ✅ **ESP32-CAM Integration** – Live video stream directly on the web UI.  
+- ✅ **Colorful Web UI** – Gradient buttons, non-selectable text, and smooth status updates.  
 
 ---
 
 ## 🖥️ Web UI Preview
-- Color-filled buttons (non-selectable, copy/paste disabled).  
-- **Metal Detector status** shown in Green (Non-Metal) / Red (Metal).  
-- **Compass UI** with live rotating arrow.  
-- Temperature, Humidity, and Servo status displayed in real-time.  
+- Color-filled buttons (hold for continuous control).  
+- **Metal Detector status** → Green (Non-Metal) / Red (Metal).  
+- **Compass Dial** → Live arrow rotation with heading text.  
+- **DHT Sensor Values** → Auto-refresh every 0.1s.  
+- **ESP32-CAM Feed** → Embedded video window on webpage.  
 
 ---
 
@@ -29,11 +30,13 @@ This project is an **ESP32-based Robot Control System** with the following featu
    - Car buttons allow directional control (hold = move, release = stop).  
    - Metal sensor + DHT sensor data auto-updates every **0.1s**.  
    - Compass heading displayed on a live canvas dial.  
+   - **ESP32-CAM stream is embedded in the same page**.  
 
 ---
 
 ## ⚙️ Hardware Required
 - ESP32 Dev Board  
+- ESP32-CAM Module  
 - 3 × Servo Motors  
 - 4 × DC Motors + Motor Driver (L298N / L293D)  
 - DHT11 / DHT22 Sensor  
@@ -61,6 +64,7 @@ This project is an **ESP32-based Robot Control System** with the following featu
 | DHT Sensor      | GPIO xx   |
 | Compass (SDA)   | GPIO 21   |
 | Compass (SCL)   | GPIO 22   |
+| ESP32-CAM       | GPIO default (OV2640 pins) |
 
 *(adjust pin numbers based on your wiring)*  
 
@@ -72,9 +76,10 @@ This project is an **ESP32-based Robot Control System** with the following featu
    - `ESP32Servo`  
    - `DHT`  
    - `Wire`  
-3. Upload the code to ESP32.  
+   - `esp32-camera` (for ESP32-CAM stream)  
+3. Upload the code to ESP32 + ESP32-CAM.  
 4. Connect to `ESP32_AP` Wi-Fi.  
-5. Open browser → `192.168.4.1` → control your robot!  
+5. Open browser → `192.168.4.1` → control your robot & see live video feed!  
 
 ---
 
@@ -84,17 +89,17 @@ This project is an **ESP32-based Robot Control System** with the following featu
 - Metal detection instantly changes status color.  
 - Compass arrow rotates in real-time.  
 - Live temperature & humidity monitoring.  
+- **Live ESP32-CAM video** directly on webpage.  
 
 ---
 
 ## 📷 Demo Screenshot
-*(You can add screenshots of the Web UI here)*  
+*(Add screenshots of Web UI with Camera stream here)*  
 
 ---
 
-## 📜 License
- 
+## 📜 License  
 
 ---
 
-👉 Ready to use, just flash the code and control your robot wirelessly! 🚗⚙️  
+👉 Ready to use, just flash the code and control your robot wirelessly — now with live camera feed! 🎥🚗⚙️  
